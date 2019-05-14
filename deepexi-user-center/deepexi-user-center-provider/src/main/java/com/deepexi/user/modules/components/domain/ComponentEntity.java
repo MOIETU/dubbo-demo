@@ -24,23 +24,23 @@ public class ComponentEntity implements Serializable {
 	
 	/** 数据ID */
 	private Long id;
-		/** 组件名称 */
+	/** 组件名称 */
 	private String name;
-		/** 组件类型ID */
+	/** 组件类型ID */
 	private Long typeId;
-		/** 版本 */
+	/** 版本 */
 	private String version;
-		/** 状态 */
+	/** 状态 */
 	private Integer status;
-		/** 创建用户 */
+	/** 创建用户 */
 	private Long createUser;
-		/** 创建日期 */
+	/** 创建日期 */
 	private Date createDate;
-		/** 更新用户 */
+	/** 更新用户 */
 	private Long updateUser;
-		/** 更新日期 */
+	/** 更新日期 */
 	private Date updateDate;
-	    public String toString() {
+	public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("name", getName())
