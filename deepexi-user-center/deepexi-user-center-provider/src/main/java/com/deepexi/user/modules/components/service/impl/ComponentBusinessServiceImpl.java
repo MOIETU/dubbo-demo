@@ -1,10 +1,11 @@
 package com.deepexi.user.modules.components.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.deepexi.user.common.PageParam;
-import com.deepexi.user.modules.components.domain.ComponentEntity;
-import com.deepexi.user.modules.components.service.ComponentBusinessService;
+import com.deepexi.component.domain.ComponentEntity;
+import com.deepexi.component.service.ComponentBusinessService;
 import com.deepexi.user.modules.components.service.IComponentService;
 import com.deepexi.util.common.PageData;
 import com.deepexi.util.common.Result;
@@ -21,6 +22,7 @@ import java.util.Map;
  *
  * @author mjc
  */
+@Service
 public class ComponentBusinessServiceImpl implements ComponentBusinessService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
