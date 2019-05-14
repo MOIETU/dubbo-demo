@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * <br>==========================
  */
 @Configuration
-@MapperScan("com.deepexi.user.mapper")
+@MapperScan("com.deepexi.user.modules.*.mapper")
 public class DataSourceConfig {
 
     @Bean(name = "dataSource", destroyMethod = "close")

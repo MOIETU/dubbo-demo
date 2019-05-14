@@ -1,6 +1,6 @@
 package com.deepexi.user.modules.components.mapper;
 
-import com.deepexi.user.modules.components.domain.ComponentTypeEntity;
+import com.deepexi.component.domain.ComponentTypeEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

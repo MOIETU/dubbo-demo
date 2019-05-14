@@ -3,7 +3,7 @@ package com.deepexi.user.modules.components.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import com.deepexi.user.modules.components.mapper.ComponentMapper;
-import com.deepexi.user.modules.components.domain.ComponentEntity;
+import com.deepexi.component.domain.ComponentEntity;
 import com.deepexi.user.modules.components.service.IComponentService;
 
 /**
