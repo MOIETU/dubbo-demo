@@ -1,8 +1,8 @@
 package com.deepexi.product.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.deepexi.component.service.ComponentBuzService;
-import com.deepexi.product.domain.eo.Component;
+import com.deepexi.component.domain.ComponentEntity;
+import com.deepexi.component.service.ComponentBusinessService;
 import com.deepexi.util.config.Payload;
 import com.deepexi.util.constant.ContentType;
 import org.slf4j.Logger;
@@ -13,6 +13,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import java.util.List;
 
 @RestController
 @Path("/api/v1/components")
@@ -22,7 +23,7 @@ public class ComponentsController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Reference(loadbalance="random",timeout=1000) //dubbo直连
-    private ComponentBuzService componentBuzService;
+    private ComponentBusinessService componentBusinessService;
 
     /*@GetMapping("/")
     public Payload getComponentList(@RequestParam("page") Integer page,
@@ -35,7 +36,8 @@ public class ComponentsController {
     @GET
     @Path("/test")
     public Payload getComponentList() {
-        return new Payload(componentBuzService.queryComponentList());
+        ComponentEntity componentEntity = componentBusinessService.queryComponentById(1l);
+        return new Payload(componentEntity);
     }
 
     /*@GetMapping("/{id}")

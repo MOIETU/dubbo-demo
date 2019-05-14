@@ -1,5 +1,7 @@
 package com.deepexi.component.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,6 +11,7 @@ import java.util.Date;
  * @author mjc
  * @date 2019-05-14
  */
+@TableName("component")
 public class ComponentEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
