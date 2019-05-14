@@ -1,7 +1,9 @@
 package com.deepexi.component.service;
 
 import com.deepexi.component.domain.ComponentEntity;
+import com.deepexi.util.common.PageData;
 import com.deepexi.util.common.Result;
+import com.deepexi.util.config.Payload;
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ public interface ComponentBusinessService {
      * @param status 组件当前状态
      * @return
      */
-    public Result queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status);
+    public PageData queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status);
 
     /**
      * 根据ID查询组件

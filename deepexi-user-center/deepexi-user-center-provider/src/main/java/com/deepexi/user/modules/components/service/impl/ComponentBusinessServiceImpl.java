@@ -9,6 +9,8 @@ import com.deepexi.component.service.ComponentBusinessService;
 import com.deepexi.user.modules.components.service.IComponentService;
 import com.deepexi.util.common.PageData;
 import com.deepexi.util.common.Result;
+import com.deepexi.util.config.Payload;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,19 +43,22 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @return
      */
     @Override
-    public Result queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status) {
+    public PageData queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status) {
         Map params = new HashMap();
         params.put("page",page);
         params.put("limit",limit);
-        params.put("name",componentName);
+        /*params.put("name",componentName);
         params.put("type_id",typeId);
-        params.put("status",status);
+        params.put("status",status);*/
         IPage<ComponentEntity> resultPage = componentService.page(
                 new PageParam<ComponentEntity>(params),
                 new QueryWrapper<ComponentEntity>()
+                        .like(StringUtils.isNotBlank(componentName),"name",componentName)
+                        .eq(typeId!=null,"type_id",typeId)
+                        .eq(status!=null,"status",status)
         );
         PageData<ComponentEntity> pageData = new PageData<>(resultPage.getRecords(),resultPage.getTotal());
-        return new Result<>().ok(pageData);
+        return pageData;
     }
 
     /**

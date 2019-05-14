@@ -3,16 +3,15 @@ package com.deepexi.product.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.deepexi.component.domain.ComponentEntity;
 import com.deepexi.component.service.ComponentBusinessService;
+import com.deepexi.util.common.PageData;
+import com.deepexi.util.common.Result;
 import com.deepexi.util.config.Payload;
 import com.deepexi.util.constant.ContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import java.util.List;
 
 @RestController
@@ -35,28 +34,61 @@ public class ComponentsController {
     }*/
     @GET
     @Path("/test")
-    public Payload getComponentList() {
-        ComponentEntity componentEntity = componentBusinessService.queryComponentById(1l);
-        return new Payload(componentEntity);
+    public Payload getComponentList(@QueryParam("page") Integer page,
+                                    @QueryParam("limit") Integer limit,
+                                    @QueryParam("name") String name,
+                                    @QueryParam("typeId") Long typeId,
+                                    @QueryParam("status") Integer status) {
+        PageData pageData = componentBusinessService.queryComponentPage(page,limit,name,typeId,status);
+        return new Payload(pageData);
     }
 
-    /*@GetMapping("/{id}")
-    public Payload getComponentById(@PathVariable("id") Long id) {
-        return new Payload(null);
+    /**
+     * 新增
+     */
+    public Payload saveComponent(){
+        return new Payload();
     }
 
-    @PostMapping("/")
-    public Payload createComponent(Component component) {
-        return new Payload(null);
+    /**
+     * 删除
+     */
+    public Payload deleteComponent(){
+        return new Payload();
     }
 
-    @PutMapping("/")
-    public Payload updateComponentById(@RequestParam("id") String id, Component component) {
-        return new Payload(null);
+    /**
+     * 批量删除
+     */
+    public Payload deleteBatchComponent(){
+        return new Payload();
     }
 
-    @DeleteMapping("/")
-    public Payload deleteComponentById(@RequestParam("id") String id) {
-        return new Payload(null);
-    }*/
+    /**
+     * 查询
+     */
+    public Payload queryComponentPage(){
+        return new Payload();
+    }
+
+    /**
+     * 上架下架
+     */
+    public Payload swapStatus(){
+        return new Payload();
+    }
+
+    /**
+     * 修改
+     */
+    public Payload updateComponent(){
+        return new Payload();
+    }
+
+    /**
+     * 查询详情
+     */
+    public Payload queryComponentDetail(){
+        return new Payload();
+    }
 }
