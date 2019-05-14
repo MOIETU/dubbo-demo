@@ -45,19 +45,22 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
     @Override
     public PageData queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status) {
         Map params = new HashMap();
-        params.put("page",page);
-        params.put("limit",limit);
-        /*params.put("name",componentName);
-        params.put("type_id",typeId);
-        params.put("status",status);*/
+        if(page!=null){
+            params.put("page",page);
+        }
+        if(limit!=null){
+            params.put("limit",limit);
+        }
+        QueryWrapper queryWrapper = new QueryWrapper<ComponentEntity>()
+                .like(StringUtils.isNotBlank(componentName),"name",componentName)
+                .eq(typeId!=null,"type_id",typeId)
+                .eq(status!=null,"status",status);
         IPage<ComponentEntity> resultPage = componentService.page(
                 new PageParam<ComponentEntity>(params),
-                new QueryWrapper<ComponentEntity>()
-                        .like(StringUtils.isNotBlank(componentName),"name",componentName)
-                        .eq(typeId!=null,"type_id",typeId)
-                        .eq(status!=null,"status",status)
+                queryWrapper
         );
-        PageData<ComponentEntity> pageData = new PageData<>(resultPage.getRecords(),resultPage.getTotal());
+        Integer total = componentService.count(queryWrapper);
+        PageData<ComponentEntity> pageData = new PageData<>(resultPage.getRecords(),total);
         return pageData;
     }
 
