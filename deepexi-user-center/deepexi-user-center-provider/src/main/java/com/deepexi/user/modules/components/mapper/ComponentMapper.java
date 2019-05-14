@@ -1,6 +1,6 @@
 package com.deepexi.user.modules.components.mapper;
 
-import com.deepexi.user.modules.components.domain.Component;
+import com.deepexi.user.modules.components.domain.ComponentEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,6 +9,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author mjc
  * @date 2019-05-14
  */
-public interface ComponentMapper extends BaseMapper<Component> {
+public interface ComponentMapper extends BaseMapper<ComponentEntity> {
 	
 }

@@ -3,7 +3,7 @@ package com.deepexi.user.modules.components.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import com.deepexi.user.modules.components.mapper.ComponentTypeMapper;
-import com.deepexi.user.modules.components.domain.ComponentType;
+import com.deepexi.user.modules.components.domain.ComponentTypeEntity;
 import com.deepexi.user.modules.components.service.IComponentTypeService;
 
 /**
@@ -13,6 +13,6 @@ import com.deepexi.user.modules.components.service.IComponentTypeService;
  * @date 2019-05-14
  */
 @Service
-public class ComponentTypeServiceImpl extends ServiceImpl<ComponentTypeMapper, ComponentType> implements IComponentTypeService {
+public class ComponentTypeServiceImpl extends ServiceImpl<ComponentTypeMapper, ComponentTypeEntity> implements IComponentTypeService {
 	
 }

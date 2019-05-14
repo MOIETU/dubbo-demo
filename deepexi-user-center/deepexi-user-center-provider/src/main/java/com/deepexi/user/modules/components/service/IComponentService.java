@@ -1,6 +1,6 @@
 package com.deepexi.user.modules.components.service;
 
-import com.deepexi.user.modules.components.domain.Component;
+import com.deepexi.user.modules.components.domain.ComponentEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,6 +9,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author mjc
  * @date 2019-05-14
  */
-public interface IComponentService extends IService<Component> {
+public interface IComponentService extends IService<ComponentEntity> {
 	
 }
