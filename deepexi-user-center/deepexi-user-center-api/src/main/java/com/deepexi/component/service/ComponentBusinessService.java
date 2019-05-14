@@ -1,6 +1,6 @@
-package com.deepexi.user.modules.components.service;
+package com.deepexi.component.service;
 
-import com.deepexi.user.modules.components.domain.ComponentEntity;
+import com.deepexi.component.domain.ComponentEntity;
 import com.deepexi.util.common.Result;
 
 import java.util.List;
@@ -65,7 +65,7 @@ public interface ComponentBusinessService {
      * @param status
      * @return
      */
-    public Boolean swapStatus(Long componentId,Integer status);
+    public Boolean swapStatus(Long componentId, Integer status);
 
     /**
      * 查询所有组件类型

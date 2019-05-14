@@ -2,12 +2,12 @@ package com.deepexi.user.modules.components.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.deepexi.user.common.PageData;
 import com.deepexi.user.common.PageParam;
-import com.deepexi.user.common.Result;
 import com.deepexi.user.modules.components.domain.ComponentEntity;
 import com.deepexi.user.modules.components.service.ComponentBusinessService;
 import com.deepexi.user.modules.components.service.IComponentService;
+import com.deepexi.util.common.PageData;
+import com.deepexi.util.common.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
