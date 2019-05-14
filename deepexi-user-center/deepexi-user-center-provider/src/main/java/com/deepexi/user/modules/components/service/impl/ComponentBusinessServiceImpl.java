@@ -36,6 +36,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param status 组件当前状态
      * @return
      */
+    @Override
     public Result queryComponentPage(Integer page, Integer limit, String componentName, Long typeId, Integer status) {
         Map params = new HashMap();
         params.put("page",page);
@@ -56,6 +57,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param id
      * @return
      */
+    @Override
     public ComponentEntity queryComponentById(Long id) {
         return componentService.getById(id);
     }
@@ -65,6 +67,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param componentEntity
      * @return
      */
+    @Override
     public Boolean saveComponent(ComponentEntity componentEntity) {
         return componentService.save(componentEntity);
     }
@@ -74,6 +77,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param componentEntity
      * @return
      */
+    @Override
     public Boolean updateComponent(ComponentEntity componentEntity){
         return componentService.updateById(componentEntity);
     }
@@ -83,6 +87,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param id
      * @return
      */
+    @Override
     public Boolean deleteComponentById(Long id) {
         return componentService.removeById(id);
     }
@@ -92,6 +97,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param ids
      * @return
      */
+    @Override
     public Boolean deleteComponentByIds(List<Long> ids){
         return componentService.removeByIds(ids);
     }
@@ -102,6 +108,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * @param status
      * @return
      */
+    @Override
     public Boolean swapStatus(Long componentId,Integer status){
         ComponentEntity componentEntity = componentService.getById(componentId);
         componentEntity.setStatus(status);
@@ -112,6 +119,7 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
      * 查询所有组件类型
      * @return
      */
+    @Override
     public List<ComponentEntity> queryComponentList(){
         return componentService.list(new QueryWrapper<ComponentEntity>());
     }
