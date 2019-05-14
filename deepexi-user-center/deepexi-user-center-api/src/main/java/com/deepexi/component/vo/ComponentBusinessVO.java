@@ -1,5 +1,7 @@
 package com.deepexi.component.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class ComponentBusinessVO {
@@ -18,10 +20,12 @@ public class ComponentBusinessVO {
     /** 创建用户 */
     private Long createUser;
     /** 创建日期 */
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
     /** 更新用户 */
     private Long updateUser;
     /** 更新日期 */
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
 
     public Long getId() {

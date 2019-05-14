@@ -1,6 +1,7 @@
 package com.deepexi.component.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,15 +18,17 @@ public class ComponentTypeEntity implements Serializable {
 	
 	/** 数据ID */
 	private Long id;
-		/** 类型名称 */
+	/** 类型名称 */
 	private String name;
-		/** 创建用户 */
+	/** 创建用户 */
 	private Long createUser;
-		/** 创建日期 */
+	/** 创建日期 */
+	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createDate;
-		/** 更新用户 */
+	/** 更新用户 */
 	private Long updateUser;
-		/** 更新日期 */
+	/** 更新日期 */
+	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date updateDate;
 
 	public Long getId() {
