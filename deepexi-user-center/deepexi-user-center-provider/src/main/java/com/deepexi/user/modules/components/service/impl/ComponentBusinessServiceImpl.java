@@ -108,4 +108,11 @@ public class ComponentBusinessServiceImpl implements ComponentBusinessService {
         return componentService.updateById(componentEntity);
     }
 
+    /**
+     * 查询所有组件类型
+     * @return
+     */
+    public List<ComponentEntity> queryComponentList(){
+        return componentService.list(new QueryWrapper<ComponentEntity>());
+    }
 }
