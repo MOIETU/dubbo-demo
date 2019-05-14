@@ -1,9 +1,7 @@
 package com.deepexi.product.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.deepexi.product.service.ProductService;
 import com.deepexi.product.domain.eo.Product;
-/*import com.deepexi.user.service.UcUserService;*/
 import com.deepexi.util.config.Payload;
 import com.deepexi.util.constant.ContentType;
 import org.slf4j.Logger;
